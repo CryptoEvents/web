@@ -6,10 +6,14 @@ web3 = new Web3(config.connection);
 
 
 let contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
+app.set('view engine', 'pug');
+app.use(express.static('./public'));
+
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', (req, res) => {
-    res.send('hello world')
+
+    res.render('index', { title: 'Hey', message: 'Hello there!' })
 });
 
 app.post('/create', (req, res) => {

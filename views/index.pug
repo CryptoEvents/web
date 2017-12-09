@@ -1,0 +1,7 @@
+extends layout.pug
+block content
+    form(action='/newToken' method='POST')
+        label Token name
+            input(name='name')
+        label Token symbol
+            input(name='symbol')

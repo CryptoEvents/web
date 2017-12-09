@@ -2,7 +2,7 @@ module.exports = {
     connection: process.env.ETH_CONNECTION || "ws://localhost:8546",
     //connection: process.env.ETH_CONNECTION || "http://localhost:8545",
     contract:{
-        address:process.env.CONTRACT_ADDRESS ||'0xF5069ff0ACdFdbB63E592240F0376b8837727b0c',
+        address:process.env.CONTRACT_ADDRESS ||'0xed235b7984fae4f4F3b680e1E00Af5C6527910D5',
         ABI:[
             {
                 "constant": false,
@@ -24,6 +24,15 @@ module.exports = {
                 "outputs": [],
                 "payable": true,
                 "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [],
+                "name": "withdraw",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
                 "type": "function"
             },
             {
