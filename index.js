@@ -19,7 +19,7 @@ app.post('/create', (req, res) => {
 
 app.post('/newToken', (req, res) => {
 
-    let account = web3.eth.accounts.create();
+        let account = web3.eth.accounts.create();
     res.json(account);
 });
 
