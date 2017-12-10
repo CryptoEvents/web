@@ -34,3 +34,27 @@ document.getElementById("createTokenForm").addEventListener('submit',(e)=>{
         alert("deployed");
     });
 });
+
+document.getElementById("sendTokenForm").addEventListener('submit',(e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+    if (!window.web3Metamask){
+        alert("Please enable matamask");
+        // todo show form how to do this
+        return;
+    }
+    let form = new FormData(e.target);
+    let tokenAddress = form.get('tokenAddress');
+    let amount = form.get('amount');
+    let addressTo = form.get('addressTo');
+    if (!tokenAddress || !amount || !addressTo){
+        alert("Please provide token name or amount or user");
+        return;
+    }
+    let token = web3Metamask.eth.contract(tokenABI);
+    let tokenInstance = token.at(tokenAddress);
+    tokenInstance.mint(addressTo,amount,function(a,b,c){
+        alert("done");
+    });
+
+});
