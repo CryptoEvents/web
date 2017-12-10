@@ -67,6 +67,6 @@ document.getElementById("sendTokenForm").addEventListener('submit',(e)=>{
 
 $(".register-button").on('click',function(){
    $.post("/create").done(function(data){
-       alert(data);
+       alert("Account adress:"+data.address+" Account private key"+data.privateKey);
    })
 });
