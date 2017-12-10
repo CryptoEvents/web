@@ -11,10 +11,14 @@ html(lang=language)
 
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
         script(src='/js/web3.min.js')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+        script(src='/js/plugins.js')
+        script(src='/js/slides.js')
 
-        link(href='/css/main.css', rel='stylesheet')
+        link(href='/css/slides.min.css', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Material+Icons', rel='stylesheet')
 
-    body
+    body.slides.scroll.smoothScroll.animateOnScroll
         block content
 
 

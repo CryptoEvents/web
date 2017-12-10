@@ -1,13 +1,13 @@
 let express = require('express');
 let app = express();
 let config = require('./config');
-const Web3 = require('web3');
+//const Web3 = require('web3');
 const bodyParser = require('body-parser');
 
-web3 = new Web3(config.connection);
+//web3 = new Web3(config.connection);
 
 
-let contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
+//let contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
 app.set('view engine', 'pug');
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
@@ -18,6 +18,10 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.get('/', (req, res) => {
 
     res.render('index', { mainContractAddress:config.contract.address,contactABI:JSON.stringify(config.contract.ABI) })
+});
+app.get('/events/', (req, res) => {
+
+    res.render('events', { mainContractAddress:config.contract.address,contactABI:JSON.stringify(config.contract.ABI) })
 });
 
 app.post('/create', (req, res) => {
@@ -65,7 +69,7 @@ app.get('/events', async () => {
 });
 
 
-app.listen(3000, () => {
+app.listen(3000,'0.0.0.0', () => {
     console.log('App started')
 });
 
