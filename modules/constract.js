@@ -1,13 +1,13 @@
-//const Web3 = require('web3');
+const Web3 = require('web3');
 let config = require('../config');
-//web3 = new Web3(config.connection);
+web3 = new Web3(config.connection);
 
 
 //const contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
 module.exports = {
     getContract: () => contract,
     createAccount: () => {
-//        return web3.eth.accounts.create();
+        return web3.eth.accounts.create();
 
     },
     getTokenBalanceOf: (tokenAddress, userAddress) => {
@@ -17,9 +17,9 @@ module.exports = {
 
     },
     getTokenInfo: (address) => {
-//        let token = new web3.eth.Contract(config.contract.tokenABI, address);
+        let token = new web3.eth.Contract(config.contract.tokenABI, address);
 
-/*        return Promise.all([
+       return Promise.all([
             token.methods.totalSupply().call(),
             token.methods.name().call(),
             token.methods.symbol().call(),
@@ -31,7 +31,7 @@ module.exports = {
                 symbol: data[2],
             }
         })
-*/    },
+    },
     getEvents: async () => {
         let results = [];
         for (let n = 0; n < 20; n++) {//todo for future normal pagination
