@@ -1,0 +1,12 @@
+div#modal-send account.modal-container
+    div.shade
+    div.popup-content
+        div.modal-text-cont
+            h2 Send token
+            form#sendTokenForm(action='/sendToken' method='POST')
+                input.ae-3.fromCenter(type='text',name='tokenAddress',placeholder='Token name')
+                input.ae-3.fromCenter(type='text',name='amount',placeholder='Amount')
+                input.ae-3.fromCenter(type='text',name='addressTo',placeholder='Send to')
+                button.button.pink.ae-6.fromCenter#sendToken  send token
+        div.popup-icon.close-modal
+

@@ -7,7 +7,8 @@ window.addEventListener('load', function() {
         let contract = web3Metamask.eth.contract(contactABI);
         window.contractInstance = contract.at(mainContractAddress);
     } else {
-        console.log("Metamask not installd");
+        let popup = $("#modal-metamask");
+        popup.addClass("open");
     }
 
     // Now you can start your app & access web3 freely:
@@ -19,8 +20,8 @@ document.getElementById("createTokenForm").addEventListener('submit',(e)=>{
     e.preventDefault();
     e.stopPropagation();
     if (!window.web3Metamask){
-        alert("Please enable matamask");
-        // todo show form how to do this
+        let popup = $("#modal-metamask");
+        popup.addClass("open");
         return;
     }
     let form = new FormData(e.target);
@@ -39,8 +40,8 @@ document.getElementById("sendTokenForm").addEventListener('submit',(e)=>{
     e.preventDefault();
     e.stopPropagation();
     if (!window.web3Metamask){
-        alert("Please enable matamask");
-        // todo show form how to do this
+        let popup = $("#modal-metamask");
+        popup.addClass("open");
         return;
     }
     let form = new FormData(e.target);
