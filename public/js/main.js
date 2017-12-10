@@ -23,7 +23,6 @@ document.getElementById("createTokenForm").addEventListener('submit',(e)=>{
         // todo show form how to do this
         return;
     }
-    console.log(e.target);
     let form = new FormData(e.target);
     let name = form.get('name');
     let symbol = form.get('symbol');
@@ -31,6 +30,7 @@ document.getElementById("createTokenForm").addEventListener('submit',(e)=>{
         alert("Please provide token name or symbol");
         return;
     }
+    contractInstance.deployNew('TestEvent','tst',18,{value:1e16},function(a,b,c){console.log(a,b,c)});
 
     console.log(contractInstance);
 
