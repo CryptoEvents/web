@@ -64,3 +64,9 @@ document.getElementById("sendTokenForm").addEventListener('submit',(e)=>{
     });
 
 });
+
+$(".register-button").on('click',function(){
+   $.post("/create").done(function(data){
+       alert(data);
+   })
+});
