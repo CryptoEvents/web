@@ -29,7 +29,7 @@ module.exports = {
     },
     getEvents: async ()=>{
         let results = [];
-        for (let n=0;n<10;n++) {//todo for future normal pagination
+        for (let n=0;n<20;n++) {//todo for future normal pagination
             try{
                 results.push(await contract.methods.addrevents(n).call());
             } catch (e){
