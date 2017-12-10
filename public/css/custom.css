@@ -71,6 +71,7 @@
     opacity: 0.9;
 }
 .modal-container.open .popup-content {
+
     -webkit-animation-name: anim-open;
     animation-name: anim-open;
     -webkit-animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
@@ -84,6 +85,7 @@
 
 .modal-container.open .popup-content,
 .modal-container.close .popup-content {
+    color:black;
     -webkit-animation-duration: 400ms;
     animation-duration: 400ms;
     -webkit-animation-fill-mode: forwards;
@@ -138,3 +140,4 @@
     overflow: auto;
     padding-right: 10px;
 }
+
