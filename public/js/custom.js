@@ -1,14 +1,10 @@
-/**
- * ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð¼Ð¾Ð´Ð°Ð»ÑŒ "Ð¢ÐµÑÑ‚"
- **/
+
 $(".test-popup-btn").on("click", function () {
     var popup = $("#modal-test");
     popup.addClass("open");
 });
 
-/**
- * ÐšÐ½Ð¾Ð¿ÐºÐ° ÑÐºÑ€Ñ‹Ñ‚ÑŒ Ð¼Ð¾Ð´Ð°Ð»Ð¸
- **/
+
 $(".modal-container .shade, .close-modal").on("click", function (e) {
     if (e.target === e.currentTarget) {
         $(".modal-container.open").removeClass("open").addClass("close");
@@ -27,9 +23,7 @@ $(".modal-container .shade").on('transitionend webkitTransitionEnd oTransitionEn
             modal.removeClass("close");
         }
     });
-/**
- * Ð¦ÐµÐ½Ñ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¼Ð¾Ð´Ð°Ð»ÐµÐ¹
- */
+
 var centerPopup = function() {
     var mainDiv = $(".modal-container.open .popup-content");
     var mainHeight = parseInt((window.innerHeight-mainDiv.height())/2);
