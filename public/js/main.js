@@ -3,7 +3,9 @@ window.addEventListener('load', function() {
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof web3 !== 'undefined') {
         // Use Mist/MetaMask's provider
-        window.web3 = new Web3(web3.currentProvider);
+        window.web3Metamask = new Web3(web3.currentProvider);
+        let contract = web3Metamask.eth.contract(contactABI);
+        window.contractInstance = contract.at(mainContractAddress);
     } else {
         console.log("Metamask not installd");
     }
@@ -13,4 +15,25 @@ window.addEventListener('load', function() {
 
 });
 
-document.getElementById("createToken").addE
+document.getElementById("createTokenForm").addEventListener('submit',(e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+    if (!window.web3Metamask){
+        alert("Please enable matamask");
+        // todo show form how to do this
+        return;
+    }
+    console.log(e.target);
+    let form = new FormData(e.target);
+    let name = form.get('name');
+    let symbol = form.get('symbol');
+    if (!name || !symbol){
+        alert("Please provide token name or symbol");
+        return;
+    }
+
+    console.log(contractInstance);
+
+
+    debugger
+});

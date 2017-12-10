@@ -2,18 +2,22 @@ let express = require('express');
 let app = express();
 let config = require('./config');
 const Web3 = require('web3');
+const bodyParser = require('body-parser');
+
 web3 = new Web3(config.connection);
 
 
 let contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
 app.set('view engine', 'pug');
 app.use(express.static('./public'));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
+app.use(bodyParser.json({limit: '50mb'}));
 
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', (req, res) => {
 
-    res.render('index', { title: 'Hey', message: 'Hello there!' })
+    res.render('index', { mainContractAddress:config.contract.address,contactABI:JSON.stringify(config.contract.ABI) })
 });
 
 app.post('/create', (req, res) => {
@@ -21,11 +25,12 @@ app.post('/create', (req, res) => {
     res.json(account);
 });
 
-app.post('/newToken', (req, res) => {
-
-        let account = web3.eth.accounts.create();
-    res.json(account);
-});
+// app.post('/newToken', (req, res) => {
+//     console.log(req.body);
+//
+//        // let account = web3.eth.accounts.create();
+//     //res.json(account);
+// });
 
 app.get('/events/:address', (req, res) => {
     let token = new web3.eth.Contract(config.contract.tokenABI, req.params.address);

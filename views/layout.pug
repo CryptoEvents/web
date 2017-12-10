@@ -10,10 +10,13 @@ html(lang=language)
         meta(name='keywords', content='Crypto Events')
 
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        script(src='/js/web3.min.js')
 
         link(href='/css/main.css', rel='stylesheet')
 
     body
         block content
 
-    script(type='text/javascript', src='/js/main.js')
+
+    block javaScript
+        script(type='text/javascript', src='/js/main.js')
