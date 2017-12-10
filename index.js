@@ -45,16 +45,10 @@ app.get('/events/:address', (req, res) => {
         });
 
 app.get('/user/:address', (req, res) => {
-
-
-
-});
-
-app.get('/events1', async () => {
-    contract.getTokensInfo().then((data)=>{
-        console.log(data);
+    contract.getUserTokens(req.params.address).then((data)=>{
+        res.json({success:true,data:data});
     },(error)=>{
-        console.log(error);
+        res.json({success:false,error:error});
     });
 
 
