@@ -66,7 +66,13 @@ document.getElementById("sendTokenForm").addEventListener('submit',(e)=>{
 });
 
 $(".register-button").on('click',function(){
-   $.post("/create").done(function(data){
-       alert("Account adress:"+data.address+" Account private key"+data.privateKey);
-   })
+    $.post("/create").done(function(data){
+        alert("Account adress:"+data.address+" Account private key"+data.privateKey);
+    })
+});
+
+
+$(".transfer-button").on('click',function(){
+    let popup = $("#modal-send");
+    popup.addClass("open");
 });
