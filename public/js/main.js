@@ -16,25 +16,30 @@ window.addEventListener('load', function() {
 
 });
 
-document.getElementById("createTokenForm").addEventListener('submit',(e)=>{
-    e.preventDefault();
-    e.stopPropagation();
-    if (!window.web3Metamask){
-        let popup = $("#modal-metamask");
-        popup.addClass("open");
-        return;
-    }
-    let form = new FormData(e.target);
-    let name = form.get('name');
-    let symbol = form.get('symbol');
-    if (!name || !symbol){
-        alert("Please provide token name or symbol");
-        return;
-    }
-    contractInstance.deployNew(name,symbol,18,{value:1e16},function(a,b,c){
-        alert("deployed");
+let createTokenForm = document.getElementById("createTokenForm");
+
+if (createTokenForm){
+    createTokenForm.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        if (!window.web3Metamask){
+            let popup = $("#modal-metamask");
+            popup.addClass("open");
+            return;
+        }
+        let form = new FormData(e.target);
+        let name = form.get('name');
+        let symbol = form.get('symbol');
+        if (!name || !symbol){
+            alert("Please provide token name or symbol");
+            return;
+        }
+        contractInstance.deployNew(name,symbol,18,{value:1e16},function(a,b,c){
+            alert("deployed");
+        });
     });
-});
+
+}
 
 document.getElementById("sendTokenForm").addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -58,4 +63,10 @@ document.getElementById("sendTokenForm").addEventListener('submit',(e)=>{
         alert("done");
     });
 
+});
+
+$(".register-button").on('click',function(){
+   $.post("/create").done(function(data){
+       alert(data);
+   })
 });
