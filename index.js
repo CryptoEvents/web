@@ -50,10 +50,13 @@ app.get('/user/:address', (req, res) => {
 
 });
 
-app.get('/events', async () => {
-    console.log(contract);
+app.get('/events1', async () => {
+    contract.getTokensInfo().then((data)=>{
+        console.log(data);
+    },(error)=>{
+        console.log(error);
+    });
 
-    let events = await contract.methods.smartEvents().call();
 
 });
 
