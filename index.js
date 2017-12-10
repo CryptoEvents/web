@@ -1,13 +1,13 @@
 let express = require('express');
 let app = express();
 let config = require('./config');
-//const Web3 = require('web3');
+const Web3 = require('web3');
 const bodyParser = require('body-parser');
 
-//web3 = new Web3(config.connection);
+web3 = new Web3(config.connection);
 
 
-//let contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
+let contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
 app.set('view engine', 'pug');
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
@@ -40,22 +40,24 @@ app.get('/events/:address', (req, res) => {
     let token = new web3.eth.Contract(config.contract.tokenABI, req.params.address);
 
     Promise.all([
-        token.methods.totalSupply.call(),
-        token.methods.name.call(),
-        token.methods.tokenSumbol.call(),
+        token.methods.totalSupply().call(),
+        token.methods.name().call(),
+        token.methods.symbol().call(),
     ]).then((data) => {
+        console.log(data[0]);
         res.json({
             success: true,
             data: {
                 total: data[0],
                 name: data[1],
-                sumbol: data[2],
+                symbol: data[2],
             }
         })
 
     }, (error) => {
         res.json({success: false, error: error})
-    })});
+    })
+    });
 
 app.get('/user/:address', (req, res) => {
 
