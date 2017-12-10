@@ -12,9 +12,9 @@ app.use(bodyParser.json({limit: '50mb'}));
 
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/', (req, res) => {
-
-    res.render('index', { mainContractAddress:config.contract.address,contactABI:JSON.stringify(config.contract.ABI) })
+app.get('/', async(req, res) => {
+    let events = await contract.getEvents()
+    res.render('index', { mainContractAddress:config.contract.address,contactABI:JSON.stringify(config.contract.ABI),event:events })
 });
 app.get('/events/', (req, res) => {
 
