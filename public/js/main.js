@@ -13,4 +13,4 @@ window.addEventListener('load', function() {
 
 });
 
-document.getElementById("")
+document.getElementById("createToken").addE
