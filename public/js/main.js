@@ -30,10 +30,7 @@ document.getElementById("createTokenForm").addEventListener('submit',(e)=>{
         alert("Please provide token name or symbol");
         return;
     }
-    contractInstance.deployNew('TestEvent','tst',18,{value:1e16},function(a,b,c){console.log(a,b,c)});
-
-    console.log(contractInstance);
-
-
-    debugger
+    contractInstance.deployNew(name,symbol,18,{value:1e16},function(a,b,c){
+        alert("deployed");
+    });
 });
