@@ -1,13 +1,10 @@
 let express = require('express');
 let app = express();
 let config = require('./config');
-const Web3 = require('web3');
+
 const bodyParser = require('body-parser');
+const contract = require('./modules/constract');
 
-web3 = new Web3(config.connection);
-
-
-let contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
 app.set('view engine', 'pug');
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
@@ -25,8 +22,7 @@ app.get('/events/', (req, res) => {
 });
 
 app.post('/create', (req, res) => {
-    let account = web3.eth.accounts.create();
-    res.json(account);
+    res.json(contract.createAccount());
 });
 
 // app.post('/newToken', (req, res) => {
@@ -37,36 +33,27 @@ app.post('/create', (req, res) => {
 // });
 
 app.get('/events/:address', (req, res) => {
-    let token = new web3.eth.Contract(config.contract.tokenABI, req.params.address);
-
-    Promise.all([
-        token.methods.totalSupply().call(),
-        token.methods.name().call(),
-        token.methods.symbol().call(),
-    ]).then((data) => {
-        console.log(data[0]);
+    contract.getTokenInfo(req.params.address).then((data)=>{
         res.json({
             success: true,
-            data: {
-                total: data[0],
-                name: data[1],
-                symbol: data[2],
-            }
+            data: data
         })
-
-    }, (error) => {
+    },(error)=>{
         res.json({success: false, error: error})
+
     })
-    });
+        });
 
 app.get('/user/:address', (req, res) => {
+
 
 
 });
 
 app.get('/events', async () => {
     console.log(contract);
-    let events = await contract.methods.smartEvents.call();
+
+    let events = await contract.methods.smartEvents().call();
 
 });
 
