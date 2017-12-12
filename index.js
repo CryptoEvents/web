@@ -35,12 +35,12 @@ app.post('/create', (req, res) => {
     res.json(contract.createAccount());
 });
 
-// app.post('/newToken', (req, res) => {
-//     console.log(req.body);
-//
-//        // let account = web3.eth.accounts.create();
-//     //res.json(account);
-// });
+app.post('/newToken', (req, res) => {
+     console.log(req.body);
+
+        // let account = web3.eth.accounts.create();
+     //res.json(account);
+ });
 
 app.get('/events/:address', (req, res) => {
     contract.getTokenInfo(req.params.address).then((data)=>{
