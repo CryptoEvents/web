@@ -3,7 +3,7 @@ let config = require('../config');
 web3 = new Web3(config.connection);
 
 
-//const contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
+const contract = new web3.eth.Contract(config.contract.ABI, config.contract.address);
 module.exports = {
     getContract: () => contract,
     createAccount: () => {
@@ -68,5 +68,32 @@ module.exports = {
             },(error)=>{
               console.log(error)
             })
+    },
+    getEventsOwners: async (userAddress) => {
+        let results = [];
+        for (let n = 0; n < 20; n++) {//todo for future normal pagination
+            try {
+		let tokenAddress = await contract.methods.addrevents(n).call();
+		let token = new web3.eth.Contract(config.contract.tokenABI, tokenAddress);
+		let myContractInstance = contract.at(config.contract.address);
+		let owner = myContractInstance.owner.call();
+        	if (owner===userAddress) results.push(tokenAddress);                
+            } catch (e) {
+                break;
+
+            }
+        }
+        return results;
+    },
+    getTokensOwner(userAddress) {
+	return this.getEventsOwners(userAddress).then((events) => {
+            return Promise.all(events.map((e) => this.getTokenInfo(e)))
+        })
+    },
+    getContractOwner(userAddress) {
+	let myContractInstance = contract.at(config.contract.address);
+	let owner = myContractInstance.owner.call();
+        if (owner===userAddress) return true;
+	else false;
     }
 };

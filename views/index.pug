@@ -6,9 +6,8 @@ block content
         input.ae-4.fromCenter(type='text',name='symbol',placeholder='Token symbol')
         button.button.pink.ae-7.fromCenter#createToken  create new token
 
-    ul.flex.fixedSpaces.later.left
-	each eee in event
-	    include event.pug
+    each eee in event
+        include event.pug
 
     include components/popups/installMetamask
 

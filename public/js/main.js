@@ -6,6 +6,12 @@ window.addEventListener('load', function() {
         window.web3Metamask = new Web3(web3.currentProvider);
         let contract = web3Metamask.eth.contract(contactABI);
         window.contractInstance = contract.at(mainContractAddress);
+	web3.eth.getAccounts(function(error, result){ 
+	    var account=result[0];
+	    $.get("/whois/"+account).success(function(data){
+	        alert("Account adress:"+data.address+" Account private key"+data.privateKey);
+	    });
+	});
     } else {
         let popup = $("#modal-metamask");
         popup.addClass("open");

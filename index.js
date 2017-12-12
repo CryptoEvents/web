@@ -64,6 +64,23 @@ app.get('/user/:address', (req, res) => {
 
 });
 
+app.get('/whois/:address', (req, res) => {
+    contract.getUserTokens(req.params.address).then((data)=>{
+        res.json({type:'user',data:data});
+    },(error)=>{
+        contract.getTokensOwner(req.params.address).then((data)=>{
+	    res.json({type:'owner',data:data});
+	},(error)=>{
+	    contract.getContractOwner(req.params.address).then((data)=>{
+	        res.json({type:'superowner',data:data});
+	    },(error)=>{
+	        res.json({type:false,error:error});
+	    }); 
+	});
+    });
+
+});
+
 
 app.listen(3000, () => {
     console.log('App started')
