@@ -65,18 +65,24 @@ app.get('/user/:address', (req, res) => {
 });
 
 app.get('/whois/:address', (req, res) => {
-    contract.getUserTokens(req.params.address).then((data)=>{
-        res.json({type:'user',data:data});
+    contract.getContractOwner(req.params.address).then((data)=>{
+        if (data==false) {
+            contract.getTokensOwner(req.params.address).then((data) => {
+                if (data.length==0) {
+                    contract.getUserTokens(req.params.address).then((data) => {
+                        if (data.length==0) res.json({type: 'notuser', data: data});
+                        else  res.json({type: 'user', data: data});
+                    }, (error) => {
+                        res.json({type: 'errorUT', error: error});
+                    });
+                } else res.json({type: 'owner', data: data});
+            }, (error) => {
+                console.log(error);
+                res.json({type: 'errorTO', error: error});
+            });
+        }else res.json({type:'superowner',data:data});
     },(error)=>{
-        contract.getTokensOwner(req.params.address).then((data)=>{
-	    res.json({type:'owner',data:data});
-	},(error)=>{
-	    contract.getContractOwner(req.params.address).then((data)=>{
-	        res.json({type:'superowner',data:data});
-	    },(error)=>{
-	        res.json({type:false,error:error});
-	    }); 
-	});
+            res.json({type:'errorSO',error:error});
     });
 
 });

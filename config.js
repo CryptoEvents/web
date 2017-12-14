@@ -1,6 +1,6 @@
 module.exports = {
-    connection: process.env.ETH_CONNECTION || "ws://localhost:8546",
-    //connection: process.env.ETH_CONNECTION || "http://localhost:8545",
+    //connection: process.env.ETH_CONNECTION || "ws://localhost:8546",
+    connection: process.env.ETH_CONNECTION || "http://localhost:8545",
     contract:{
         address:process.env.CONTRACT_ADDRESS ||'0xed235b7984fae4f4F3b680e1E00Af5C6527910D5',
         ABI:[

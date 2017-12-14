@@ -11,7 +11,6 @@ module.exports = {
 
     },
     getTokenBalanceOf: (tokenAddress, userAddress) => {
-        console.log(tokenAddress);
         let token = new web3.eth.Contract(config.contract.tokenABI, tokenAddress);
         return token.methods.balanceOf(userAddress).call();
 
@@ -66,18 +65,18 @@ module.exports = {
                     return data;
                 })
             },(error)=>{
-              console.log(error)
+              console.log('Error:'+error)
             })
     },
     getEventsOwners: async (userAddress) => {
         let results = [];
         for (let n = 0; n < 20; n++) {//todo for future normal pagination
             try {
-		let tokenAddress = await contract.methods.addrevents(n).call();
-		let token = new web3.eth.Contract(config.contract.tokenABI, tokenAddress);
-		let myContractInstance = contract.at(config.contract.address);
-		let owner = myContractInstance.owner.call();
-        	if (owner===userAddress) results.push(tokenAddress);                
+                let tokenAddress = await contract.methods.addrevents(n).call();
+                console.log(tokenAddress);
+                let token = new web3.eth.Contract(config.contract.tokenABI, tokenAddress);
+                let owner = await token.methods.owner().call();
+        	    if (owner.toUpperCase()===userAddress) results.push(tokenAddress);
             } catch (e) {
                 break;
 
@@ -85,15 +84,14 @@ module.exports = {
         }
         return results;
     },
-    getTokensOwner(userAddress) {
-	return this.getEventsOwners(userAddress).then((events) => {
+    getTokensOwner (userAddress)  {
+    	return this.getEventsOwners(userAddress.toUpperCase()).then((events) => {
             return Promise.all(events.map((e) => this.getTokenInfo(e)))
         })
     },
-    getContractOwner(userAddress) {
-	let myContractInstance = contract.at(config.contract.address);
-	let owner = myContractInstance.owner.call();
-        if (owner===userAddress) return true;
-	else false;
+    getContractOwner: async(userAddress) => {
+        let owner = await contract.methods.owner().call();
+        if (owner.toUpperCase() === userAddress.toUpperCase()) return true;
+        else return false;
     }
 };

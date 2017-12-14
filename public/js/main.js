@@ -7,9 +7,9 @@ window.addEventListener('load', function() {
         let contract = web3Metamask.eth.contract(contactABI);
         window.contractInstance = contract.at(mainContractAddress);
 	web3.eth.getAccounts(function(error, result){ 
-	    var account=result[0];
-	    $.get("/whois/"+account).success(function(data){
-	        alert("Account adress:"+data.address+" Account private key"+data.privateKey);
+	    let account=result[0];
+	    $.get("/whois/"+account).done(function(data){
+	        alert("Who: "+data.type);
 	    });
 	});
     } else {
@@ -42,6 +42,8 @@ if (createTokenForm){
         }
         contractInstance.deployNew(name,symbol,18,{value:1e16},function(a,b,c){
             alert("deployed");
+            //ссылка на транзакцию или отслеживание когда апрувится и синхронизируется локальная нода,
+            // ибо сразу человек не может работать с токенами
         });
     });
 
