@@ -1,0 +1,10 @@
+extends layout.pug
+block content
+
+    each eee in event
+        include event_for_owner.pug
+
+block prepend javaScript
+    script.
+        window.mainContractAddress = '#{mainContractAddress}';
+        window.contactABI = !{contactABI};

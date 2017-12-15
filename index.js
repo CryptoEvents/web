@@ -26,21 +26,42 @@ app.get('/events/', (req, res) => {
     res.render('events', {
         mainContractAddress:config.contract.address,
         contactABI:JSON.stringify(config.contract.ABI),
-        tokenABI:JSON.stringify(config.contract.tokenABI),
-
+        tokenABI:JSON.stringify(config.contract.tokenABI)
     })
 });
 
+app.get('/admin/', async (req, res) => {
+    let events = await contract.getTokensInfo();
+    res.render('admin', {
+        mainContractAddress:config.contract.address,
+        contactABI:JSON.stringify(config.contract.ABI),
+        tokenABI:JSON.stringify(config.contract.tokenABI),
+        event:events
+    })
+});
+app.get('/owner/:address',async (req, res) => {
+    let events = await contract.getTokensOwner(req.params.address);
+    res.render('owner', {
+        mainContractAddress:config.contract.address,
+        contactABI:JSON.stringify(config.contract.ABI),
+        tokenABI:JSON.stringify(config.contract.tokenABI),
+        event:events
+    })
+});
+
+app.get('/user/:address',async (req, res) => {
+    let tokens = await contract.getUserTokens(req.params.address);
+    console.log(tokens);
+    res.render('user', {
+        mainContractAddress:config.contract.address,
+        contactABI:JSON.stringify(config.contract.ABI),
+        tokenABI:JSON.stringify(config.contract.tokenABI),
+        tokens:tokens
+    })
+});
 app.post('/create', (req, res) => {
     res.json(contract.createAccount());
 });
-
-app.post('/newToken', (req, res) => {
-     console.log(req.body);
-
-        // let account = web3.eth.accounts.create();
-     //res.json(account);
- });
 
 app.get('/events/:address', (req, res) => {
     contract.getTokenInfo(req.params.address).then((data)=>{
@@ -52,7 +73,7 @@ app.get('/events/:address', (req, res) => {
         res.json({success: false, error: error})
 
     })
-        });
+});
 
 app.get('/user/:address', (req, res) => {
     contract.getUserTokens(req.params.address).then((data)=>{

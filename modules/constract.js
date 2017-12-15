@@ -22,12 +22,14 @@ module.exports = {
             token.methods.totalSupply().call(),
             token.methods.name().call(),
             token.methods.symbol().call(),
+           token.methods.owner().call(),
         ]).then((data) => {
             return {
                 address: address,
                 total: data[0],
                 name: data[1],
                 symbol: data[2],
+                owner: data[3],
             }
         })
     },
@@ -73,7 +75,6 @@ module.exports = {
         for (let n = 0; n < 20; n++) {//todo for future normal pagination
             try {
                 let tokenAddress = await contract.methods.addrevents(n).call();
-                console.log(tokenAddress);
                 let token = new web3.eth.Contract(config.contract.tokenABI, tokenAddress);
                 let owner = await token.methods.owner().call();
         	    if (owner.toUpperCase()===userAddress) results.push(tokenAddress);

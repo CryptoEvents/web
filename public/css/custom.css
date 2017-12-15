@@ -140,4 +140,26 @@
     overflow: auto;
     padding-right: 10px;
 }
-
+.button{
+    background-color: #228B22;
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px !important;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease 0s;
+    white-space: nowrap;
+    width: 170px !important;	
+}
+.nonevisible {
+    display:none;
+}
