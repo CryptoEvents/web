@@ -71,6 +71,23 @@ float : left;
 }
 }
 @media (max-width:767px) {
+#slider_sec{
+	background-size : auto 100% !important;
+}
+.caption_img {
+	width:270px !important;
+	height:auto !important;
+}
+.fadeInRight {
+	float:left;
+}
+.fadeInLeft {
+	float:left;
+}
+#abt_sec h2 {
+	font-size:24px;
+	line-height:normal;
+}
 .container {
 width : 300px;
 }

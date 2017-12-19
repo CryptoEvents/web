@@ -123,7 +123,7 @@ text-transform : capitalize;
 transition : all 0.4s 0s ease;
 }
 #nav_menu ul li {
-float : left;
+float : right;
 padding : 0;
 position : relative;
 }
@@ -354,6 +354,10 @@ height : 90px;
 .wrap_caption {
 padding : 190px 0;
 }
+.caption_img {
+	width:543px;
+	height:184px;
+}
 .slider {
 display : block;
 text-align : center;
@@ -364,7 +368,7 @@ width : 100%;
 background-image : url("../img/HeroImg.svg");
 background-position : center center;
 background-repeat : no-repeat;
-background-size : 100% !important;
+background-size : 100%;
 height : 1024px;
 width : 100%;
 transition: all 0.2s ease;
@@ -1052,4 +1056,22 @@ width : 731px !important ;
 }
 .white{
 	color:#FFF;
+}
+.fadeInRight {
+	float:right;
+}
+.input-group .form-control {
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-khtml-border-radius: 100px;
+	border-radius: 100px;	
+	width:50%;
+}
+.btn-warning {
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-khtml-border-radius: 100px;
+	border-radius: 100px;	
+	background-color:#F2994A;
+	color:#ECEEF8;
 }

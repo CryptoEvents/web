@@ -17,8 +17,8 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
     </head>
 <body >
@@ -52,7 +52,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							</button>	
-						<div id="navbar">
+						<div id="navbar" class="collapse">
 							<ul>
 								<li><a class="page-scroll" href="#overview">Overview</a></li>
 								<li><a class="page-scroll" href="#events">Events</a></li>
@@ -83,7 +83,7 @@
 					<div class="item active">
 						<div class="wrap_caption">
 						  <div class="caption_carousel">
-							<h1><img src="img/Title.png" width="543" height="184"></h1>
+							<img class="caption_img" src="img/Title.png" />
 							<p>&nbsp;</p>
 							<p>Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical.</p>
 						    <p><div class="button"><a href="#events" class="white">Create event</a></div></p>
@@ -102,34 +102,35 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
-				<div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
+				<div class="col-md-6 col-sm-12 col-xs-12 fadeInRight"><img src="img/img1.svg">
+				</div>
+				<div class="col-md-6 col-sm-12 col-xs-12 fadeInLeft">
 					<h2>Easily create events or lotteries</h2>
                     <p>Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
 Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
 			  </div>
-				<div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight"><img src="img/img1.svg">
-				</div>
 <div class="clear"></div>
 <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
                 <img src="img/img2.svg">
 			  </div>
-				<div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight">					<h2>Based on blockchain technology</h2>
+				<div class="col-md-6 col-sm-12 col-xs-12">					<h2>Based on blockchain technology</h2>
                     <p>Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
 Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
 </div>
 <div class="clear"></div>
-<div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
+<div class="col-md-6 col-sm-12 col-xs-12 fadeInRight"><img src="img/img3.svg">
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12 fadeInLeft">
 					<h2>Create tokens and exchange them for actions or tickets</h2>
                     <p>Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
 Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
 			  </div>
-              <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight"><img src="img/img3.svg">
-				</div>
 <div class="clear"></div>
-<div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
+<div class="col-md-6 col-sm-12 col-xs-12 fadeInLeft">
                 <img src="img/img4.svg">
 			  </div>
-				<div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight">					<h2>Share your events on social networks</h2>
+				<div class="col-md-6 col-sm-12 col-xs-12">
+                	<h2>Share your events on social networks</h2>
                     <p>Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
 Just take them out and they’re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
 </div>
@@ -173,7 +174,17 @@ Just take them out and they’re ready to use with all your devices. Put them in
 					<h2><strong>Create your first event</strong></h2>
 				</div>
                 <form>
-                <input type="text" /><input style="button orange" type="button" value="Create" />
+<div class="row">
+    <div class="col-xs-12">
+      <div class="input-group">
+      <input type="text" class="form-control" placeholder="Name of your project                              " />
+      <input type="text" class="form-control" placeholder="Symbol of your project (3-4 letter)" />
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-warning">Create</button>
+				</span>
+		</div>
+	</div>
+</div>
                 </form>		
 			</div>	
 		</div>
