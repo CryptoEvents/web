@@ -10,10 +10,11 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
 app.use(bodyParser.json({limit: '50mb'}));
 
+var fs = require("fs");
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', async(req, res) => {
-    let events = await contract.getEvents();
+    let events = await contract.getTokensInfo();
     res.render('index', {
         mainContractAddress:config.contract.address,
         contactABI:JSON.stringify(config.contract.ABI),
@@ -51,7 +52,6 @@ app.get('/owner/:address',async (req, res) => {
 
 app.get('/user/:address',async (req, res) => {
     let tokens = await contract.getUserTokens(req.params.address);
-    console.log(tokens);
     res.render('user', {
         mainContractAddress:config.contract.address,
         contactABI:JSON.stringify(config.contract.ABI),
@@ -61,6 +61,13 @@ app.get('/user/:address',async (req, res) => {
 });
 app.post('/create', (req, res) => {
     res.json(contract.createAccount());
+});
+
+app.post('/join', (req, res) => {
+    fs.appendFileSync("tmp/"+req.body.tokenAddress, req.body.name+'::'+req.body.address+'::need\n');
+    res.json({
+        success: "Thank You"
+    })
 });
 
 app.get('/events/:address', (req, res) => {

@@ -8,17 +8,16 @@ window.addEventListener('load', function() {
         let contract = web3Metamask.eth.contract(contactABI);
         window.contractInstance = contract.at(mainContractAddress);
         web3.eth.getAccounts(function(error, result){
+	    useraddress=result[0];
             $.get("/whois/"+result[0]).done(function(data){
                 switch(data.type){
                     case 'superowner':
                         $("#adminCabinet")[0].style.display="block";
                         break;
                     case 'owner':
-                        useraddress=result[0];
                         $("#ownerCabinet")[0].style.display="block";
                         break;
                     case 'user':
-                        useraddress=result[0];
                         $("#userCabinet")[0].style.display="block";
                         break;
                     default:
@@ -61,6 +60,40 @@ if (createTokenForm){
         });
     });
 
+}
+
+let joinToEvent = $(".joinToTheEvent");
+
+if (joinToEvent.length>0){
+    $.each(joinToEvent,function(i, item, arr){
+        item.addEventListener('submit',(e)=> {
+            e.preventDefault();
+            e.stopPropagation();
+            item[2].disabled = true;
+            item[2].innerHTML = "wait";
+            if (!window.web3Metamask) {
+                let popup = $("#modal-metamask");
+                popup.addClass("open");
+                return;
+            }
+            let form = new FormData(e.target);
+            let name = form.get('name');
+            let user = useraddress
+            let tokenAddress = form.get('tokenAddress');
+
+            if (!name || !tokenAddress) {
+                alert("Please provide your name");
+                item[2].disabled = false;
+                item[2].innerHTML = "Join";
+                return;
+            }
+            $.post("/join", {name: name, address: useraddress, tokenAddress: tokenAddress},).done(function (data) {
+                alert(data.success);
+                item[2].disabled = false;
+                item[2].innerHTML = "Join";
+            });
+        });
+    });
 }
 
 $("#adminCabinet").on('click',(e)=>{
