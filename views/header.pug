@@ -1,0 +1,33 @@
+doctype html
+html(lang=language)
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        // Title Of Site
+        title Crypto Events
+        meta(name='description', content='Crypto Events')
+        meta(name='keywords', content='Crypto Events')
+
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        script(src='/js/web3.min.js')
+        script(src='/js/jquery.min.js')
+
+        link(href='/css/custom.css', rel='stylesheet')
+
+    body.slides.plain.animated
+        div#adminCabinet.button.nonevisible.
+            Admin cabinet
+        div#ownerCabinet.button.nonevisible.
+            My events
+        div#userCabinet.button.nonevisible.
+            My tokens
+        block content
+
+    include ./components/popups/installMetamask
+
+
+    block javaScript
+        script(type='text/javascript', src='/js/main.js')
+        script(src='/js/custom.js')
+

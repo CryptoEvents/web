@@ -164,7 +164,7 @@ display : block;
 margin-left : 6px;
 }
 #src_sec {
-background-image : url("../img/slide_img.jpg");
+background-image : url("../assets/img/slide_img.jpg");
 background-position : center center;
 background-size : cover;
 min-height : 500px;
@@ -380,23 +380,23 @@ overflow:hidden;
   left: 0;
 }
 #slider_sec_sun {
-background : url("../img/1-0.png") top right no-repeat ;	
+background : url("../assets/img/1-0.png") top right no-repeat ;	
 width: 100%;
 height: 1024px;
 z-index: 5;
 }
 #slider_sec0 {
-background : url("../img/1-1.svg") bottom left no-repeat, linear-gradient(to bottom,#7515CF,#9E2B99);
+background : url("../assets/img/1-1.svg") bottom left no-repeat, linear-gradient(to bottom,#7515CF,#9E2B99);
 height : 1024px;
 width : 100%;
 }
 #slider_sec1 {
-background : url("../img/1-2.svg") bottom left no-repeat ;
+background : url("../assets/img/1-2.svg") bottom left no-repeat ;
 height : 1024px;
 width : 100%;
 }
 #slider_sec2 {
-background : url("../img/1-3.svg") bottom left no-repeat;
+background : url("../assets/img/1-3.svg") bottom left no-repeat;
 height : 1024px;
 width : 100%;
 }
@@ -525,7 +525,7 @@ padding : 70px 0;
 }
 #events {
 background-size: 100%;
-background: url(../img/Vector%204.svg) bottom no-repeat, linear-gradient(to bottom,#9E2B99,#EB5757);
+background: url(../assets/img/Vector%204.svg) bottom no-repeat, linear-gradient(to bottom,#9E2B99,#EB5757);
 }
 .sngl_team h3 {
 font-size : 24px;
@@ -539,7 +539,7 @@ color : #FFF;
 	color:#CCCFDE;
 }
 .sngl_img {
-	background:url(../img/events1.jpg) no-repeat;
+	background:url(../assets/img/events1.jpg) no-repeat;
 	width:437px;
 	height:246px; 
 	position:relative;	
@@ -596,7 +596,7 @@ width : 100%;
 text-align : center;
 }
 #tstm_sec {
-background-image : url("../img/testimonial_bg.jpg");
+background-image : url("../assets/img/testimonial_bg.jpg");
 background-position : center center;
 background-repeat : no-repeat;
 background-size : 100% 100%;
@@ -714,19 +714,19 @@ margin : 0;
 padding : 30px;
 }
 .title_bg_1 {
-background-image : url("../img/basic.jpg");
+background-image : url("../assets/img/basic.jpg");
 background-position : center center;
 background-repeat : no-repeat;
 background-size : 100% 100%;
 }
 .title_bg_2 {
-background-image : url("../img/standar.jpg");
+background-image : url("../assets/img/standar.jpg");
 background-position : center center;
 background-repeat : no-repeat;
 background-size : 100% 100%;
 }
 .title_bg_3 {
-background-image : url("../img/extended.jpg");
+background-image : url("../assets/img/extended.jpg");
 background-position : center center;
 background-repeat : no-repeat;
 background-size : 100% 100%;

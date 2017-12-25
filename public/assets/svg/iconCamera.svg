@@ -1,0 +1,17 @@
+<svg width="24" height="20" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconCamera</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-16367 -928)">
+<g id="iconCamera">
+<use xlink:href="#path0_fill" transform="translate(16367 928)" fill="url(#paint0_linear)"/>
+<use xlink:href="#path0_fill" transform="translate(16367 928)" fill="#CCCFDE"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(5.80681e-14 20 -20 4.07589e-14 22 -1.98896e-14)">
+<stop offset="0" stop-color="#EB5757"/>
+<stop offset="1" stop-color="#9E2B99"/>
+</linearGradient>
+<path id="path0_fill" fill-rule="evenodd" d="M 12 0C 9.03906 0 6.4541 1.60883 5.07031 4L 5 4C 2.23828 4 0 6.23859 0 9L 0 15C 0 17.7614 2.23828 20 5 20L 19 20C 21.7617 20 24 17.7614 24 15L 24 9C 24 6.23859 21.7617 4 19 4L 18.9297 4C 17.5469 1.60883 14.9609 0 12 0ZM 12 12C 14.209 12 16 10.2092 16 8C 16 5.79083 14.209 4 12 4C 9.79102 4 8 5.79083 8 8C 8 10.2092 9.79102 12 12 12Z"/>
+</defs>
+</svg>

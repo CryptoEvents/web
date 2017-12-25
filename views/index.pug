@@ -1,13 +1,169 @@
 extends layout.pug
 block content
 
-    form#createTokenForm(action='/newToken' method='POST')
-        input.ae-4.fromCenter(type='text',name='name',placeholder='Token name')
-        input.ae-4.fromCenter(type='text',name='symbol',placeholder='Token symbol')
-        button.button.pink.ae-7.fromCenter#createToken  create new token
+    div#loader-wrapper
+        div.logo
+        div#loader
+    header.main_menu_sec.navbar.navbar-default.navbar-fixed-top
+        div.container
+            div.row
+                div.col-lg-3.col-md-3.col-sm-12
+                    div.lft_hd.
+                        <a href="/"><img src="/assets/img/logo.png" alt=""/></a>
+                div.col-lg-9.col-md-9.col-sm-12
+                    div.rgt_hd
+                        div.main_menu
+                            nav#nav_menu
+                                button(aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button").
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                div#navbar.collapse.in
+                                    ul.
+                                        <li><a class="page-scroll" href="#overview">Overview</a></li>
+                                        <li><a class="page-scroll" href="#events">Events</a></li>
+                                        <li><a class="page-scroll" href="#quest_answ">Question &amp; Answers</a></li>
+                                div.buttons
+                                    div.page-scroll
+                                        div#adminCabinet.buttonsmall.signin.nonevisible.
+                                            Admin cabinet
+                                        div#ownerCabinet.buttonsmall.signin.nonevisible.
+                                            My events
+                                        div#userCabinet.buttonsmall.signin.nonevisible.
+                                            My tokens
 
-    each eee in event
-        include event.pug
+    section#slider_sec.
+        <div id="slider_sec_sun" class="parallax_layer">  </div>
+        <div id="slider_sec0" class="parallax_layer">  </div>
+        <div id="slider_sec1" class="parallax_layer">  </div>
+        <div id="slider_sec2" class="parallax_layer">  </div>
+        <div class="container">
+        <div class="row">
+        <div class="slider">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+        <div class="wrap_caption">
+        <div class="caption_carousel">
+        <img class="caption_img" src="/assets/img/Title.png" />
+        <p>&nbsp;</p>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical.</p>
+        <p><div class="button"><a href="#events" class="white">Create event</a></div></p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    div.div80
+
+    section#overview.
+        <div class="container">
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+        <div class="col-md-6 col-sm-12 col-xs-12 fadeInRight"><img src="/assets/img/img1.svg">
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12 fadeInLeft">
+        <h2>Easily create events or lotteries</h2>
+        <div class="div80">&nbsp;</div>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
+        Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
+            </div>
+        <div class="clear"></div>
+        <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
+        <img src="/assets/img/img2.svg">
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">					<h2>Based on blockchain technology</h2><div class="div80">&nbsp;</div>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
+        Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
+        </div>
+        <div class="clear"></div>
+        <div class="col-md-6 col-sm-12 col-xs-12 fadeInRight"><img src="/assets/img/img3.svg">
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12 fadeInLeft">
+        <h2>Create tokens and exchange them for actions or tickets</h2><div class="div80">&nbsp;</div>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
+        Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
+            </div>
+        <div class="clear"></div>
+        <div class="col-md-6 col-sm-12 col-xs-12 fadeInLeft">
+        <img src="/assets/img/img4.svg">
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+        <h2>Share your events on social networks</h2><div class="div80">&nbsp;</div>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods. Simplicity and technology, together like never before. The result is completely magical
+        Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear.</p>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    div.clear
+
+    section#events
+        div.container
+            div.row
+                div.col-lg-12.col-md-12.col-sm-12.col-xs12
+                    div.title_sec
+                        h2 Created events
+                div.col-lg-12.col-md-12.col-sm-12.col-xs12
+                    div.all_team
+                        each eee in event
+                            include event.pug
+
+                div.col-lg-12.col-md-12.col-sm-12.col-xs12.
+                    <div class="title_sec">
+                    <div class="div80"></div>
+                    <h2><strong>Create your first event</strong></h2>
+                    </div>
+                    <form action='/newToken' method='POST'>
+                    <div class="row">
+                    <div class="col-xs-12">
+                    <div class="input-group">
+                    <input type="text" name="name" class="form-control" placeholder="Name of your project                              " />
+                    <input type="text" name="symbol" class="form-control" placeholder="Symbol of your project (3-4 letter)" />
+                    <span class="input-group-btn">
+                    <button type="button" id="createToken" class="btn btn-warning">Create</button>
+                    </span>
+                    </div>
+                    </div>
+                    </div>
+                    </form>
+        div.clear
+
+    section#quest_answ.
+        <div class="container">
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+        <div class="title_sec">
+        <h2>Questions &amp; Answers</h2>
+        </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs12">
+        <div class="al_clt">
+        <div class="sngl_clt">
+        <h3>How to create event</h3>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods.</p>
+        </div>
+        <div class="sngl_clt">
+        <h3>How to create event</h3>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods.</p>
+        </div>
+        <div class="sngl_clt">
+        <h3>How to create event</h3>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods.</p>
+        </div>
+        <div class="sngl_clt">
+        <h3>How to create event</h3>
+        <p>Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods.</p>
+        </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
 
 
 block prepend javaScript

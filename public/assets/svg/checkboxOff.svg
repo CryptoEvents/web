@@ -1,0 +1,18 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>checkboxOff</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-17212 -1850)">
+<g id="checkboxOff">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(17212 1850)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(17212 1850)" fill="#9B51E0"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 5C 0 2.23858 2.23858 0 5 0L 19 0C 21.7614 0 24 2.23858 24 5L 24 19C 24 21.7614 21.7614 24 19 24L 5 24C 2.23858 24 0 21.7614 0 19L 0 5Z"/>
+<path id="path1_stroke_2x" d="M 5 2L 19 2L 19 -2L 5 -2L 5 2ZM 22 5L 22 19L 26 19L 26 5L 22 5ZM 19 22L 5 22L 5 26L 19 26L 19 22ZM 2 19L 2 5L -2 5L -2 19L 2 19ZM 5 22C 3.34315 22 2 20.6569 2 19L -2 19C -2 22.866 1.13401 26 5 26L 5 22ZM 22 19C 22 20.6569 20.6569 22 19 22L 19 26C 22.866 26 26 22.866 26 19L 22 19ZM 19 2C 20.6569 2 22 3.34315 22 5L 26 5C 26 1.13401 22.866 -2 19 -2L 19 2ZM 5 -2C 1.13401 -2 -2 1.13401 -2 5L 2 5C 2 3.34315 3.34315 2 5 2L 5 -2Z"/>
+</defs>
+</svg>

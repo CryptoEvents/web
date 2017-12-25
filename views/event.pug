@@ -1,13 +1,16 @@
-li.col-3-12.col-tablet-1-2.col-phone-1-1
-    div.
-        <strong>Name</strong>
-        #{eee.name}
+div.sngl_team
+    div.sngl_img.
+        <img style="position:absolute; top:40%" src="/assets/img/TitleEvents1.svg">
+    h3 #{eee.name}
+    p Just take them out and they`re ready to use with all your devices. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Introducing AirPods.
     div.
         <strong>Total</strong>
         #{eee.total}
     h3.
         Join to the event
     form#joinToTheEvent.joinToTheEvent(action='/join' method='POST')
-        input.fromCenter(type='hidden',name='tokenAddress',value=eee.address)
-        input.ae-4.fromCenter(type='text',name='name',placeholder='Your name')
-        button.button.pink.ae-7.fromCenter#joinEvent  join
+        div.input-group
+            input.form-control(type='text',name='name',placeholder='Your name',style="width:100%")
+            input.form-control(type='hidden',name='tokenAddress',value=eee.address)
+            span.input-group-btn
+                button.btn.btn-warning#joinEvent(type='button')  join

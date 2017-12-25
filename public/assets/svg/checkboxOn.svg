@@ -1,0 +1,16 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>checkboxOn</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-17212 -1884)">
+<g id="checkboxOn">
+<use xlink:href="#path0_fill" transform="translate(17212 1884)" fill="url(#paint0_linear)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.92907e-14 42.5 -42.5 -1.88671e-14 33.25 -10.5)">
+<stop offset="0" stop-color="#EB5757"/>
+<stop offset="1" stop-color="#9B51E0"/>
+</linearGradient>
+<path id="path0_fill" d="M 21.3496 0.58481L 10.9336 13.3272C 10.6191 13.7131 10.0684 13.8078 9.64258 13.5494L 4.81836 10.6238C 3.86133 10.0443 2.82031 11.2303 3.51758 12.1032L 10.5156 20.8584C 10.9551 21.4078 11.8086 21.3443 12.1621 20.736L 23.0195 2.02611C 23.6348 2.85725 24 3.88609 24 5L 24 19C 24 21.7614 21.7617 24 19 24L 5 24C 2.23828 24 0 21.7614 0 19L 0 5C 0 2.23857 2.23828 0 5 0L 19 0C 19.8496 0 20.6484 0.211552 21.3496 0.58481Z"/>
+</defs>
+</svg>
