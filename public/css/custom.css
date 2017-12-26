@@ -163,3 +163,27 @@
 .nonevisible {
     display:none !important;
 }
+.logon {
+    font-size:18px;
+    font-weight:500;
+    color:#40434A;
+    border-bottom:4px solid #40434A;
+    height: 90px;
+    width: 100px;
+    line-height: 80px;
+    text-align: center;
+    display: inline-table;
+}
+.main_menu{
+    height:100px;
+}
+#sector_first {
+background : linear-gradient(to bottom,#EB5757,#A05FB8);
+position:relative;
+height : 160px;
+width : 100%;
+overflow:hidden;
+display:block;
+text-align:center;
+padding:50px;
+}

@@ -12,13 +12,13 @@ window.addEventListener('load', function() {
             $.get("/whois/"+result[0]).done(function(data){
                 switch(data.type){
                     case 'superowner':
-                        $("#adminCabinet")[0].style.display="block";
+                        $("#adminCabinet").removeClass("nonevisible");
                         break;
                     case 'owner':
-                        $("#ownerCabinet")[0].style.display="block";
+                        $("#ownerCabinet").removeClass("nonevisible");
                         break;
                     case 'user':
-                        $("#userCabinet")[0].style.display="block";
+                        $("#userCabinet").removeClass("nonevisible");
                         break;
                     default:
                         break;
@@ -82,13 +82,19 @@ if (joinToEvent.length>0){
             let tokenAddress = form.get('tokenAddress');
 
             if (!name || !tokenAddress) {
-                alert("Please provide your name");
+                let popup = $("#modal-alert");
+                $("#titleAlert").innerText("Warning");
+                $("#textAlert").innerText("Please provide your name");
+                popup.addClass("open");
                 item[2].disabled = false;
                 item[2].innerHTML = "Join";
                 return;
             }
             $.post("/join", {name: name, address: useraddress, tokenAddress: tokenAddress},).done(function (data) {
-                alert(data.success);
+                let popup = $("#modal-alert");
+                $("#titleAlert").text("Success");
+                $("#textAlert").text(data.success);
+                popup.addClass("open");
                 item[2].disabled = false;
                 item[2].innerHTML = "Join";
             });

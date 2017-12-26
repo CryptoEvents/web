@@ -1,8 +1,9 @@
 extends header.pug
 block content
-
-    each eee in event
-        include event_for_admin.pug
+    div.div80
+    section#overview
+        each eee in event
+            include event_for_admin.pug
 
 
 block prepend javaScript

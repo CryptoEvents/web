@@ -20,8 +20,8 @@ block content
                                     <span class="icon-bar"></span>
                                 div#navbar.collapse.in
                                     ul.
-                                        <li><a class="page-scroll" href="#overview">Overview</a></li>
-                                        <li><a class="page-scroll" href="#events">Events</a></li>
+                                        <li><a class="page-scroll" href="#overviewKey">Overview</a></li>
+                                        <li><a class="page-scroll" href="#eventsKey">Events</a></li>
                                         <li><a class="page-scroll" href="#quest_answ">Question &amp; Answers</a></li>
                                 div.buttons
                                     div.page-scroll
@@ -56,8 +56,7 @@ block content
         </div>
         </div>
         </div>
-
-    div.div80
+    div.div80#overviewKey
 
     section#overview.
         <div class="container">
@@ -100,7 +99,7 @@ block content
         </div>
         </div>
 
-    div.clear
+    div.clear#eventsKey
 
     section#events
         div.container
@@ -109,7 +108,7 @@ block content
                     div.title_sec
                         h2 Created events
                 div.col-lg-12.col-md-12.col-sm-12.col-xs12
-                    div.all_team
+                    div.all_events
                         each eee in event
                             include event.pug
 

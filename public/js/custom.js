@@ -5,7 +5,7 @@ $(".test-popup-btn").on("click", function () {
 });
 
 
-$(".modal-container .shade, .close-modal").on("click", function (e) {
+$(".modal-container .shade, .close-modal, .close_alert").on("click", function (e) {
     if (e.target === e.currentTarget) {
         $(".modal-container.open").removeClass("open").addClass("close");
         if ($('html').is('.no-csstransitions')) {

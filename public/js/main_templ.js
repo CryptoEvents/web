@@ -54,13 +54,12 @@ else {
     });   
 
 /*----------------------------------------------------*/
-/* Crousel Team 
+/* Carousel Event
 /*----------------------------------------------------*/
-	$('.all_team').owlCarousel({
-		items:4,
+    var owl = $('.all_events').owlCarousel({
+		items:3,
 		loop:true,
 		margin:10,
-		nav:true,
 		autoplay:true,
 		smartSpeed:3000,
 		navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
@@ -90,7 +89,7 @@ $(window).bind('scroll',function(e){
  
 function parallaxScroll(){
     var scrolled = $(window).scrollTop();
-	if(scrolled<750){
+	if(scrolled<740){
 		$('#slider_sec0').css('top',(0-(scrolled*.1))+'px');
 		$('#slider_sec1').css('top',(0-(scrolled*.2))+'px');
 		$('#slider_sec2').css('top',(0-(scrolled*.3))+'px');

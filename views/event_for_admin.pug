@@ -1,16 +1,18 @@
-li
-    div.
-        <strong>Address</strong>
-        #{eee.address}
-    div.
-        <strong>Name</strong>
-        #{eee.name}
-    div.
-        <strong>Symbol</strong>
-        #{eee.symbol}
-    div.
-        <strong>Total</strong>
-        #{eee.total}
-    div.
-        <strong>Owner</strong>
-        #{eee.owner}
+div.container
+    div.row
+        div.col-lg-12.col-md-12.col-sm-12.col-xs12
+            div.col-md-6.col-sm-12.col-xs-12.fadeInLeft
+                img(src="/assets/img/superImg.png")
+                p.small owner #{eee.owner}
+            div.col-md-6.col-sm-12.col-xs-12.fadeInRight
+                h3 #{eee.name}
+                p #{eee.address}
+                div.div80
+                div.row
+                    div.col-md-6.col-sm-12.col-xs-12
+                        button.gettoken Get Token
+                    div.col-md-6.col-sm-12.col-xs-12
+                        button.givetoken Give Token
+                p
+                p CSC #{eee.total}
+div.clear
