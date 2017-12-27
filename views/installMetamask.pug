@@ -1,0 +1,59 @@
+doctype html
+html(lang=language)
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        // Title Of Site
+        title Crypto Events
+        meta(name='description', content='Crypto Events')
+        meta(name='keywords', content='Crypto Events')
+
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        script(src='/js/web3.min.js')
+        script(src='/js/jquery.min.js')
+
+        link(href='/css/custom.css', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900', rel='stylesheet')
+        link(href='/css/normalize.css', rel='stylesheet')
+        link(href='/css/main.css', rel='stylesheet')
+        link(href='/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/css/style.css', rel='stylesheet')
+        link(href='/css/responsive.css', rel='stylesheet')
+
+    body.slides.plain.animated
+        block content
+            section#metamask.parallax_layer
+                div.caption_error
+                    img.caption_img( src="/assets/svg/LogoBig.svg")
+                    p &nbsp;
+                    p Issue & Interact with Standart Token Contracts on Ethereum.
+                    p You are currently
+                    h1 OFFLINE
+                    p In order to use the Crypto Events, you need to download Metamask.
+            div.clear(style="height:512px;")
+            div.col-lg-6.col-md-6.col-sm-6.col-xs6
+                div.abt
+                    img( src="/assets/svg/iconMetamask.svg")
+                    br
+                    p(style="font-size:48px;") METAMASK
+                    div.div80
+                    div.button
+                        a(href="https://metamask.io/").white Get Extension
+            div.col-lg-6.col-md-6.col-sm-6.col-xs6
+                p MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.
+                p MetaMask includes a secure identity vault, providing a user interface to manage your identities on different sites and sign blockchain transactions.
+                p We’re initially building MetaMask as a Chrome extension, but eventually plan to support Firefox and beyond. If you’re a developer, you can start developing with MetaMask today.
+                p Our mission is to make Ethereum as easy to use for as many people as possible.
+
+            div.clear
+            footer#ft_sec.
+                <div class="container">
+                <div class="row">
+                <div class="col-lg-12">
+                <ul class="copy_right">
+                <li><span>Copyright &copy; 2017 CryptoEvents Inc. All rights reserved.</span>       |      <a href="privacy.html">Privacy Policy</a> |      <a href="termuse.html">Terms of Use</a></li>
+                </ul>
+                </div>
+                </div>
+                </div>

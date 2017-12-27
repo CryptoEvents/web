@@ -1,6 +1,11 @@
 extends header.pug
 block content
-
+    div.div80
+    div.container
+        div.row
+            div.col-lg-12.col-md-12.col-sm-12.col-xs12
+                div.col-md-6.col-sm-12.col-xs-12.fadeInLeft <strong>Address</strong>
+                div.col-md-6.col-sm-12.col-xs-12.fadeInRight <strong>Balance</strong>
     each token in tokens
         include mytokens.pug
 
@@ -9,3 +14,4 @@ block prepend javaScript
     script.
         window.mainContractAddress = '#{mainContractAddress}';
         window.contactABI = !{contactABI};
+        window.tokenABI = !{tokenABI};

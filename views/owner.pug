@@ -1,6 +1,6 @@
 extends header.pug
 block content
-
+    div.div80
     each eee in event
         include event_for_owner.pug
 
@@ -8,3 +8,4 @@ block prepend javaScript
     script.
         window.mainContractAddress = '#{mainContractAddress}';
         window.contactABI = !{contactABI};
+        window.tokenABI = !{tokenABI};

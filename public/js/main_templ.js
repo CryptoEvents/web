@@ -62,6 +62,7 @@ else {
 		margin:10,
 		autoplay:true,
 		smartSpeed:3000,
+		mouseDrag:false,
 		navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 		responsive:{
 			0:{

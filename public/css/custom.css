@@ -102,6 +102,12 @@
     box-shadow: 0 0 35px 7px rgba(30, 30, 30, 0.75);
 }
 
+.events.modal-container.open .popup-content,
+.events.modal-container.close .popup-content {
+
+    max-width: 700px;
+
+}
 .modal-container .shade {
     background: #403d39;
     opacity: 0;

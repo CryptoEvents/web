@@ -55,7 +55,7 @@ html(lang=language)
                         <input type="text" name="name" class="form-control" placeholder="Name of your project                              " />
                         <input type="text" name="symbol" class="form-control" placeholder="Symbol of your project (3-4 letter)" />
                         <span class="input-group-btn">
-                        <button type="button" id="createToken" class="btn btn-sirena">Create</button>
+                        <button type="submit" id="createToken" class="btn btn-sirena">Create</button>
                         </span>
                         </div>
                         </div>
@@ -63,7 +63,6 @@ html(lang=language)
                         </form>
         block content
 
-        include ./components/popups/installMetamask
         include ./components/popups/alert
 
         footer#ft_sec.
@@ -78,8 +77,8 @@ html(lang=language)
             </div>
 
         block javaScript
+            script(src="/js/jquery.min.js")
             script(type='text/javascript', src='/js/main.js')
             script(src='/js/custom.js')
-            script(src="/js/jquery.min.js")
             script( src="/js/bootstrap.min.js")
             script( src="/js/showHide.js")

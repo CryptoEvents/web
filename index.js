@@ -62,6 +62,9 @@ app.get('/user/:address',async (req, res) => {
 app.post('/create', (req, res) => {
     res.json(contract.createAccount());
 });
+app.get('/metamask', (req, res) => {
+    res.render('installMetamask');
+});
 
 app.post('/join', (req, res) => {
     fs.appendFileSync("tmp/"+req.body.tokenAddress, req.body.name+'::'+req.body.address+'::need\n');

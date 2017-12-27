@@ -1,4 +1,4 @@
-div(id="modal-send"+eee.address).events.modal-container
+div(id="modal-get"+eee.address).events.modal-container
     div.shade
     div.popup-content
         div.modal-text-content
@@ -7,15 +7,15 @@ div(id="modal-send"+eee.address).events.modal-container
             p.address_popup #{eee.address}
             p.total_popup CSC #{eee.total}
             div.div80
-            form.sendTokenForm
+            form.getTokenForm
                 div.input-group
                     input.form-control(type='hidden',name='tokenAddress',value=eee.address)
-                    input.form-control100(type='text',name='amount',placeholder='Amount of tokens to send')
+                    input.form-control100(type='text',name='amount',placeholder='Amount of tokens to get')
                     br
-                    input.form-control100(type='text',name='addressTo',placeholder='To Address')
+                    input.form-control100(type='text',name='addressFrom',placeholder='From Address')
                     br
                 span.input-group-btn
                     button.givetoken.close_alert Close
-                    button(type="submit").sendtoken.btn-sirena#sendToken  Send
+                    button(type="submit").sendtoken.btn-sirena#sendToken  Get
         div.popup-icon.close-modal
 

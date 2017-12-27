@@ -1,9 +1,19 @@
-h3.ae-4
-   span #{eee.address}
-div
-    span #{eee.name}
-div
-    span #{eee.symbol}
-div
-    span #{eee.total}
+div.container
+    div.row
+        div.col-lg-12.col-md-12.col-sm-12.col-xs12
+            div.col-md-6.col-sm-12.col-xs-12.fadeInLeft
+                img(src="/assets/img/superImg.png")
+            div.col-md-6.col-sm-12.col-xs-12.fadeInRight
+                h3 #{eee.name}
+                p #{eee.address}
+                div.div80
+                div.row
+                    div.col-md-6.col-sm-12.col-xs-12
+                        button.gettoken(id=eee.address) Send Token
+                    div.col-md-6.col-sm-12.col-xs-12
+                        button.givetoken(id=eee.address) Give Token
+                p
+                p CSC #{eee.total}
+div.clear
 include ./components/popups/sendTokenOwner
+include ./components/popups/getTokenOwner
